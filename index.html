@@ -1,24 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
-</head>
-<body>
-<h1>1 Überschrift</h1>
-<h2>The onclick Event</h2>
 
-<p>The onclick event triggers a function when an element is clicked on.</p>
-<p>Click to trigger a function that will output "Hello World":</p>
-
-<button onclick="myFunction()">Click me</button>
-
-<p id="demo"></p>
-
-<script>
-function myFunction() {
-  document.getElementById("demo").innerHTML = "Hello World";
-}
-</script>
-
-</body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Test app</title>
+        <script src="https://telegram.org/js/telegram-web-app.js"></script>
+        <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
+    </head>
+    <body>
+        <button id="ad">Show ad</button>
+        <script>
+            // insert your block id
+            const AdController = window.Adsgram.init({ blockId: "3861" });
+            const button = document.getElementById('ad');
+            button.addEventListener('click', () => {
+                AdController.show().then((result) => {
+                    // user watch ad till the end
+                    // your code to reward user
+                    alert('Reward');
+                }).catch((result) => {
+                    // user skipped video or get error during playing ad
+                    // do nothing or whatever you want
+                    alert(JSON.stringify(result, null, 4));
+                })
+            })
+        </script>
+    </body>
 </html>
