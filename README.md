@@ -1,0 +1,1 @@
+Test AdBot for Telegram
