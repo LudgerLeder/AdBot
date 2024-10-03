@@ -9,12 +9,14 @@
         <script src="https://sad.adsgram.ai/js/sad.min.js"></script>
     </head>
     <body>
+        <p>Hallo Casey, dies ist ein Test. Bitte NICHT auf den Button klicken, er geht nicht. </p>
         <button id="ad">Show ad</button>
         <script>
             // insert your block id
             const AdController = window.Adsgram.init({ blockId: "3861" });
             const button = document.getElementById('ad');
             button.addEventListener('click', () => {
+                alert('du hast es doch getan');
                 AdController.show().then((result) => {
                     // user watch ad till the end
                     // your code to reward user
